@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <center style="font-size: xx-large;">TASK ON 11-6-24</center><hr>
+
+    <br> <br> <br> 
+<center id="cen">  
+    
+    <span>Enter User ID: </span><input type="text" name="" id="text" placeholder="User name"> <br> <br>
+    <span>Enter Password:  </span><input type="password" name="" id="pass" placeholder="password"> <br>  <br>
+    <span>Re-Enter Password:  </span><input type="password" name="" id="repass" placeholder="password"> 
+      <br> <br> &nbsp; <button id="btn" style="width: 100px; font-size: medium;">Submit</button> <br><br>
+
+      <a href="#" style="text-decoration: none;">forgot Password</a> or  <a href="#" style="text-decoration: none;">Not have an account?</a>
+  <br>  <br> <button style="font-size: large; width: 150px;">Register</button>
+    </center>
+    <br><br><br><br>
+    <center >
+        <h2>NOTE:</h2>
+        <h3> -- >ENTER VALID USERNAME & PASSWORD</h3>
+        <h3> -- > PASSWORD DOESN'T CONSISTS NUMBER  </h3>
+        <h3> -- > PASSWORDS MUST BE SAME FOR BOTH </h3>
+        <h3>-- > EVERY FIELD CANNOT BE EMPTY</h3>
+    </center>
+<script>
+        var user=document.getElementById("text")
+        var btn=document.getElementById("btn")
+        var pass=document.getElementById("pass")
+        var repass=document.getElementById("repass")
+        
+        btn.addEventListener("click",press)
+        function press() {
+        if(user.value.length<5 || pass.value.length<3){
+            alert("ENTER VALID USERNAME & PASSWORD");
+        }
+        else if(pass.value.charCodeAt()>48 && pass.value.charCodeAt()<57){
+            alert("PASSWORD DOESN'T CONSISTS NUMBER")
+        }
+        else if(repass.value!==pass.value ){
+            alert("PASSWORD DOESN'T MATCHED")
+        }
+        else{
+          localStorage.setItem("Name",user.value)
+          localStorage.setItem("Password",pass.value)
+        }
+    }
+      
+
+       
+    </script>
+</body>
+</html>
